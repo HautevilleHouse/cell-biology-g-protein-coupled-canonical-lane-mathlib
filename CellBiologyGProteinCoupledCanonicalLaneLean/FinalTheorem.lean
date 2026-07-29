@@ -1,0 +1,19 @@
+import canonicalLaneMathlib.AdmissibleClass
+import CellBiologyGProteinCoupledCanonicalLaneLean.GProteinReceptorStructure
+import CellBiologyGProteinCoupledCanonicalLaneLean.LigandBindingDynamics
+import CellBiologyGProteinCoupledCanonicalLaneLean.SignalTransductionCascade
+import CellBiologyGProteinCoupledCanonicalLaneLean.DesensitizationInternalization
+import CellBiologyGProteinCoupledCanonicalLaneLean.CanonicalSignalingPathway
+
+namespace HautevilleHouse
+namespace CellBiologyGProteinCoupledCanonicalLaneLean
+
+def ConstrainedGPCRClosure (A : AdmissibleClass) : Prop :=
+  bridgeClosed A ∧ gateClosed A
+
+theorem constrained_gpcr_endgame (A : AdmissibleClass) :
+    ConstrainedGPCRClosure A := by
+  exact And.intro (bridge_from_admissible_class A) (gate_from_admissible_class A)
+
+end CellBiologyGProteinCoupledCanonicalLaneLean
+end HautevilleHouse
